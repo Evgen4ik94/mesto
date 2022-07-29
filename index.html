@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesto</title>
+<script defer src="main.js"></script><link href="main.css" rel="stylesheet"></head>
+<body class="page">
+<!-- ШАПКА -->
+        <header class="header">
+            <img class="header__logo" src="bbe2a6eafac19c3d031c.svg" alt="Место">
+        </header>
+    <main class="content">
+<!-- ПРОФИЛЬ -->
+    <section class="profile">
+        <div class="profile__avatar">
+            <img class="profile__image" src="955aca11ddc790f22462.jpg" alt="Фото профиля">
+        </div>
+        <div class="profile__info">
+            <div class="profile__name-box">
+                <h1 class="text profile__name">Евгений Миляков</h1>
+                <button class="profile__button profile__button-edit" title="Редактировать" type="button"></button>
+            </div>
+            <p class="text profile__prof">Инженер-конструктор</p>
+        </div>
+        <button class="profile__button profile__button-add" title="Добавить" type="button"></button>
+    </section>
+<!-- ГАЛЕРЕЯ -->
+    <section class="gallery">
+        <ul class="gallery__list">
+        </ul>
+    </section>
+    </main>
+<!-- ПОДВАЛ -->
+    <footer class="footer">
+        <p class="footer__author">&copy; 2022 Евгений Миляков</p>
+    </footer>
+<!-- POP-UPS -->
+    <!-- Редактировать профиль -->
+    <div class="popup popup_edit_profile">
+        <div class="popup__container">
+            <button class="popup__button-close" type="button"></button>
+            <h3 class="popup__head">Редактировать профиль</h3>
+            <form class="popup__form popup__form_type_edit" name="userInfo">
+                    <input required type="text" class="popup__item popup__item_type_name" id="name-item" name="name" placeholder="Имя" minlength="2" maxlength="40">
+                    <span class="popup__item-error name-item-error"></span>
+                    <input required type="text" class="popup__item popup__item_type_about" id="about-item" name="about" placeholder="О себе" minlength="2" maxlength="200">
+                    <span class="popup__item-error about-item-error"></span>
+                <button class="popup__button-submit popup__button-save" type="submit">Сохранить</button>
+            </form>
+        </div>
+    </div>
+    <!-- Добавить фото -->
+    <div class="popup popup_add_photo">
+        <div class="popup__container">
+            <button class="popup__button-close" type="button"></button>
+            <h3 class="popup__head">Новое место</h3>
+            <form class="popup__form popup__form_type_create-card" action="#" method="POST" name="placeInfo">
+                <input type="text" name="name" placeholder="Название" class="popup__item popup__item_type_caption" required minlength="2" maxlength="30" id="title-item">
+                <span class="popup__item-error title-item-error"></span>
+                <input type="url" name="link" placeholder="Ссылка на изображение" class="popup__item popup__item_type_link" required id="link-item">
+                <span class="popup__item-error link-item-error"></span>
+                <button type="submit" class="popup__button-submit popup__button-create popup__button-submit_disabled" disabled>Создать</button>
+            </form>
+        </div>
+    </div>
+    <!-- POPUP FULLSCREEN-IMAGE-->
+    <div class="popup popup_type_fullscreen-image">
+        <figure class="popup__image-container">
+          <button class="popup__button-close button" type="button" aria-label="Закрыть"></button>
+          <img class="popup__image" src="#" alt="#">
+          <figcaption class="popup__image-caption">
+            Новое место
+          </figcaption>
+        </figure>
+      </div>
+<!-- TEMPLATE -->
+<template id="gallery-template">
+    <li class="photo">
+        <button class="photo__button-delete" type="button" title="Удалить"></button>
+        <img class="photo__item" src="#" alt="Title">
+        <div class="photo__description">
+            <h2 class="photo__title"></h2>
+            <button class="photo__button-like" title="Лайк" type="button"></button>
+        </div>
+    </li>
+</template>
+<!-- СКРИПТ -->
+    <!-- <script src="./index.js"></script> -->
+</body>
+</html>
